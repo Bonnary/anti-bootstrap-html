@@ -1,0 +1,118 @@
+$navTextColor: #fff;
+$HamburgerBoder: #fff;
+$navBackgroundColor: #ff69b4;
+$brandSize: 1.25rem;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import "NavIcon";
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: $navBackgroundColor;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.container-full {
+  @extend .container;
+}
+
+.navbar-brand {
+  color: $navTextColor;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin: 0 1rem;
+  font-size: $brandSize;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-Hamburger {
+  display: block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: auto 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: 1px solid $HamburgerBoder;
+  border-radius: 0.25rem;
+}
+
+.navbar-menu {
+  max-height: 0;
+  flex-basis: 100%;
+  // flex-grow: 1;
+  transition: all 1s linear;
+}
+
+.show-menu {
+  @include flexCenter();
+  max-height: 500px;
+  flex-direction: column;
+}
+
+.navbar-list {
+  list-style: none;
+  padding:0;
+  li{
+    text-align: center;
+    padding: 1rem;
+    a{
+      color: $navTextColor;
+      font-size: 1rem;
+    }
+  }
+}
+
+.navbar-menu-Desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .container {
+    max-width: 720px;
+  }
+  .navbar-Hamburger {
+    display: none;
+  }
+
+  .navbar-menu-Desktop{
+  @include flexCenter();
+  a{
+    font-size: 1rem;
+    color: $navTextColor;
+    padding: 0 1rem;
+  }
+}
+}
