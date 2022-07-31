@@ -1,0 +1,34 @@
+@mixin testing {
+  margin: 15rem 0;
+  
+}
+
+@mixin test-text {
+  margin-left: 8rem;
+}
+
+.hero-container {
+  @include testing;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left{
+  @include test-text;
+  text-align: center;
+  max-width: 20rem;
+}
+
+.right{
+  @include test-text;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  .left,.right{
+    margin-left: 0;
+  }
+  
+}

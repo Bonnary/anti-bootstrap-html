@@ -1,0 +1,25 @@
+.hero-container {
+  margin: 15rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left {
+  margin-left: 8rem;
+  text-align: center;
+  max-width: 20rem;
+}
+
+.right {
+  margin-left: 8rem;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+
+  .left, .right {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=Hero.css.map */
